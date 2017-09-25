@@ -167,15 +167,14 @@ var validate={
        }
     },
 
-    isCreditcard:function(x){
-        if(x.match(/^[3-6][0-9]{15,17}$/)){
+    isPost:function(x){
+        if(x.match(/^\d{6}$/)){
             return true
         }
         else{
             return false
         }
-    },
-
+    }
 
 
 
@@ -258,7 +257,7 @@ $(function(){
     });
 
     $("#btn15").click(function(){
-        var y=$(".creditcard").val();
-        vD.isCreditcard(y)
+        var y=$(".post").val();
+        vD.isPost(y)
     });
 });
