@@ -33,7 +33,7 @@ var validate={
     },
 
     isNumber:function(x){
-        if(!isNaN(x)){
+        if(x.match(/^[0-9]+$/)){
             return true
         }
         else{
@@ -42,8 +42,8 @@ var validate={
     },
 
     isLetter: function (x) {
-        if(x.match(/^[A-Za-z]$/)){
-            return true
+        if(x.match(/^[A-Za-z]+$/)){
+            console.log("true")
         }
         else{
             return false
@@ -78,7 +78,7 @@ var validate={
     },
 
     isPassward:function(x){
-        if(x.match(/^[\w]{6,20}$/)){
+        if(x.match(/^\w{6,20}$/)){
             return true
         }
         else{
@@ -87,7 +87,7 @@ var validate={
     },
 
     isUsername:function(x){
-        if(x.match(/^[\w]{3,20}$/)){
+        if(x.match(/^\w{3,20}$/)){
             return true
         }
         else{
@@ -105,7 +105,7 @@ var validate={
     },
 
     isIdcard:function(x){
-      if(x.length=18&& x.match(/^[0-9]{6}[1,2][0-1,9][0-9]{2}[0,1][0-9][0-3][0-9]{4}[0-9,x]$/)){
+      if(x.match(/^[0-9]{6}[1,2][0-1,9][0-9]{2}[0,1][0-9][0-3][0-9]{4}[0-9,x]$/)){
           return true
       }
       else{
@@ -122,7 +122,19 @@ var validate={
 $(function(){
     var vD=Object.create(validate);
     $("#btn1").click(function(){
-        var y=$(".empty").val()
+        var y=$(".empty").val();
         vD.isEmpty(y)
-    })
-})
+    });
+
+    $("#btn2").click(function(){
+        var y=$(".number").val();
+        vD.isNumber(y)
+    });
+
+    $("#btn3").click(function(){
+        var y=$(".letter").val();
+        vD.isLetter(y)
+    });
+
+
+});
