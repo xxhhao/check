@@ -43,7 +43,7 @@ var validate={
 
     isLetter: function (x) {
         if(x.match(/^[A-Za-z]+$/)){
-            console.log("true")
+            return true
         }
         else{
             return false
