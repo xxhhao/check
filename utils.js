@@ -33,7 +33,7 @@ var validate={
     },
 
     isNumber:function(x){
-        if(x.match(/^[0-9]+$/)){
+        if(x.match(/^\d+$/)){
             return true
         }
         else{
@@ -51,7 +51,7 @@ var validate={
     },
 
     isTelephone:function(x){
-        if(x.match(/^1[3-5|8][0-9]{9}$/)){
+        if(x.match(/^1[3-5|8]\d{9}$/)){
             return true
         }
         else{
@@ -86,7 +86,7 @@ var validate={
         }
     },
 
-    isUsername:function(x){
+    isNickname:function(x){
         if(x.match(/^\w{3,20}$/)){
             return true
         }
@@ -176,7 +176,7 @@ var validate={
         }
     },
 
-    
+
 
 
 };
@@ -223,8 +223,8 @@ $(function(){
     });
 
     $("#btn8").click(function(){
-        var y=$(".username").val();
-        vD.isUsername(y)
+        var y=$(".nickname").val();
+        vD.isNickname(y)
     });
 
     $("#btn9").click(function(){
