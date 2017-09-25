@@ -51,7 +51,7 @@ var validate={
     },
 
     isTelephone:function(x){
-        if(x.match(/^1[3-5,8][0-9]{9}$/)){
+        if(x.match(/^1[3-5|8][0-9]{9}$/)){
             return true
         }
         else{
@@ -105,13 +105,78 @@ var validate={
     },
 
     isIdcard:function(x){
-      if(x.match(/^[0-9]{6}[1,2][0-1,9][0-9]{2}[0,1][0-9][0-3][0-9]{4}[0-9,x]$/)){
-          return true
-      }
-      else{
-          return false
-      }
+        if(x.match(/^[0-9]{6}[1|2][0|1|9][0-9]{2}[0|1][0-9][0-3][0-9]{4}[0-9|x]$/)){
+            return true
+        }
+        else{
+            return false
+        }
     },
+
+    isUrl:function(x){
+        if(x.match(/^https:\/\/www\.[a-z0-9_-]+(\.[a-z]{2,3}){1,2}(\/[a-z0-9_-]+)*$/)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+    isDate:function(x){
+        if(x.match(/^\d{4}\-\d{2}\-\d{2}$/)){
+            var dateArray= x.split("-");
+            var a=parseInt(dateArray[0]);
+            var b=parseInt(dateArray[1]);
+            var c=parseInt(dateArray[2]);
+            if(a<2100 && b<13 && c<32){
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        else{
+            return false
+        }
+    },
+
+    isTime:function(x){
+        if(x.match(/^\d{2}:\d{2}:\d{2}$/)){
+            var timeArray= x.split(":");
+            var a=parseInt(timeArray[0]);
+            var b=parseInt(timeArray[1]);
+            var c=parseInt(timeArray[2]);
+            if(a<25 && b<61 &&c<61){
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        else{
+            return false
+        }
+    },
+
+    isInt:function(x){
+       if(x.match(/^[1-9][0-9]*$/)){
+           return true
+       }
+        else{
+           return false
+       }
+    },
+
+    isCreditcard:function(x){
+        if(x.match(/^[3-6][0-9]{15,17}$/)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+
 
 
 };
@@ -137,4 +202,23 @@ $(function(){
     });
 
 
+
+
+
+
+
+
+
+
+
+
+    $("#btn4").click(function(){
+        var y=$(".url").val();
+        vD.isUrl(y)
+    });
+
+    $("#btn5").click(function(){
+        var y=$(".date").val();
+        vD.isDate(y)
+    });
 });
