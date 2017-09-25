@@ -186,6 +186,7 @@ var validate={
 
 $(function(){
     var vD=Object.create(validate);
+
     $("#btn1").click(function(){
         var y=$(".empty").val();
         vD.isEmpty(y)
@@ -201,24 +202,63 @@ $(function(){
         vD.isLetter(y)
     });
 
-
-
-
-
-
-
-
-
-
-
-
     $("#btn4").click(function(){
+        var y=$(".telephone").val();
+        vD.isTelephone(y)
+    });
+
+    $("#btn5").click(function(){
+        var y=$(".email").val();
+        vD.isEmail(y)
+    });
+
+    $("#btn6").click(function(){
+        var y=$(".chinese").val();
+        vD.isChinese(y)
+    });
+
+    $("#btn7").click(function(){
+        var y=$(".passward").val();
+        vD.isPassward(y)
+    });
+
+    $("#btn8").click(function(){
+        var y=$(".username").val();
+        vD.isUsername(y)
+    });
+
+    $("#btn9").click(function(){
+        var y=$(".money").val();
+        vD.isMoney(y)
+    });
+
+    $("#btn10").click(function(){
+        var y=$(".idcard").val();
+        vD.isIdcard(y)
+    });
+
+    $("#btn11").click(function(){
         var y=$(".url").val();
         vD.isUrl(y)
     });
 
-    $("#btn5").click(function(){
+    $("#btn12").click(function(){
         var y=$(".date").val();
         vD.isDate(y)
+    });
+
+    $("#btn13").click(function(){
+        var y=$(".time").val();
+        vD.isTime(y)
+    });
+
+    $("#btn14").click(function(){
+        var y=$(".int").val();
+        vD.isInt(y)
+    });
+
+    $("#btn15").click(function(){
+        var y=$(".creditcard").val();
+        vD.isCreditcard(y)
     });
 });
