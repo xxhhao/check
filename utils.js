@@ -4,41 +4,84 @@
 
 $(function(){
     $(".check").click(function(){
-        myInput1();
-        myInput2();
-        myInput3();
+        console.log()
     });
 });
 
-//必填项验证
-function myInput1(){
-    var x=$(".myInput1");
-    if(x.val()==""){
-        return false
-    }
-    else{
-        return true
-    }
-}
 
-//数字验证
-function myInput2(){
-    var x=$(".myInput2");
-    if(isNaN(x.val())){
-        return false
-    }
-    else{
-        return true
-    }
-}
+var validate={
+    isEmpty:function(){
+        var x=this.val();
+        if(x==""){
+            return true
+        }
+        else{
+            return false
+        }
+    },
 
-//英文字母验证
-function myInput3(){
-    var x=$(".myInput3");
-    if(!x.val().match(/^[A-Za-z]+$/)){
-        alert("www")
-    }
-    else{
-        return true
-    }
-}
+    isNumber:function(){
+        if(!isNaN(x)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+    isLetter: function () {
+        if(x.match(/^[A-Za-z]$/)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+    isTelephone:function(){
+        if(x.match(/^1[3-5,8][0-9]{9}$/)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+    isEmail:function(){
+        if(x.match(/^[A-Za-z0-9_-]+@[A-Za-z0-9_-]+(\.[A-Za-z]{2,3}){1,2}$/)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+    isChinese:function(){
+        if(x.match(/^[\u2E80-\u9FFF]$/)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+    isPassward:function(){
+        if(x.match(/^[\w]{6,20}$/)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+    isUsername:function(){
+        if(x.match(/^[\w]{3,20}$/)){
+            return true
+        }
+        else{
+            return false
+        }
+    },
+
+    is
+};
