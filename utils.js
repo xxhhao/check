@@ -105,9 +105,18 @@ var validate={
     },
 
     isIdcard:function(x){
-        if(x.match(/^[0-9]{6}[1|2][0|1|9][0-9]{2}[0|1][0-9][0-3][0-9]{4}[0-9|x]$/)){
-            return true
+        if(x.match(/^\d{6}\d{4}\d{2}\d{2}\d{3}[0-9|x]$/)){
+            var a= parseInt(x.slice(7,10));
+            var b= parseInt(x.slice(11,12));
+            var c= parseInt(x.slice(13,14));
+            if(a<2100 && b<13 && c<32){
+                return true
+            }
+            else{
+                return false
+            }
         }
+
         else{
             return false
         }
