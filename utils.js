@@ -185,8 +185,6 @@ var validate={
         }
     }
 
-
-
 };
 
 
