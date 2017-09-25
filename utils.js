@@ -183,8 +183,16 @@ var validate={
         else{
             return false
         }
-    }
+    },
 
+    isLength:function(x){
+        if(x.length>=6){
+            return true
+        }
+        else{
+            return false
+        }
+    }
 };
 
 
@@ -266,5 +274,10 @@ $(function(){
     $("#btn15").click(function(){
         var y=$(".post").val();
         vD.isPost(y)
+    });
+
+    $("#btn16").click(function(){
+        var y=$(".length").val();
+        vD.isLength(y)
     });
 });
