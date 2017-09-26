@@ -96,7 +96,7 @@ var validate={
     },
 
     isMoney:function(x){
-        if(x.match(/^[0-9]*\.[0-9]{2}$/)){
+        if(x.match(/^\d*\.\d{2}$/)){
             return true
         }
         else{
