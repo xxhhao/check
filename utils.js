@@ -78,11 +78,39 @@ var validate={
     },
 
     isPassward:function(x){
-        if(x.match(/^\w{6,20}$/)){
-            alert("true")
+        var a=0;
+        var b=0;
+        var c=0;
+        if(x==""){
+            alert("empty")
+        }
+        else if(x.length<6|| x.length>20){
+            alert("short")
         }
         else{
-            alert("false")
+            for(i=0;i< x.length;i++){
+                if(x.charAt(i).match(/^\d+$/)){
+                    a=1;
+                }
+                else if(x.charAt(i).match(/^[A-Za-z]+$/)){
+                    b=1;
+                }
+                else{
+                    c=1;
+                }
+                continue
+            }
+
+            var num=a+b+c;
+            if(num==1){
+                alert("simple")
+            }
+            else if(num==2){
+                alert("normal")
+            }
+            else{
+                alert("good")
+            }
         }
     },
 
