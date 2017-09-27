@@ -98,7 +98,6 @@ var validate={
                 else{
                     c=1;
                 }
-                continue
             }
 
             var num=a+b+c;
