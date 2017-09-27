@@ -78,9 +78,6 @@ var validate={
     },
 
     isPassward:function(x){
-        var a=0;
-        var b=0;
-        var c=0;
         if(x==""){
             alert("empty")
         }
@@ -88,6 +85,9 @@ var validate={
             alert("short")
         }
         else{
+            var a=0;
+            var b=0;
+            var c=0;
             for(i=0;i< x.length;i++){
                 if(x.charAt(i).match(/^\d+$/)){
                     a=1;
